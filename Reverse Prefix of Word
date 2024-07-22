@@ -1,0 +1,20 @@
+class Solution {
+    public String reversePrefix(String word, char ch) {
+        StringBuilder sb = new StringBuilder();
+        int k=0;
+        for(int i=0;i<word.length();i++){
+            if(word.charAt(i)==ch){
+                k++;
+                sb.append(word.substring(0,i+1));
+                sb.reverse();
+                sb.append(word.substring(i+1,word.length()));
+                break;
+            }
+        }
+        if(k==0){
+            return word;
+        }else{
+            return sb.toString();
+        }
+    }
+}
